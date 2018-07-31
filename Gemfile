@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#Add webpacker 
+gem 'webpacker', '~> 3.5'
+
+gem 'foreman' 
 # Use Devise for User Management System
 gem 'devise', '~> 4.4', '>= 4.4.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
