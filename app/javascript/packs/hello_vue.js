@@ -5,7 +5,7 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
+/*import Vue from 'vue'
 import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   console.log(app)
+}) */
+
+import Vue from 'vue/dist/vue.esm'
+
+document.addEventListener('DOMContentLoaded', () => {
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
 })
+
 
 
 // The above code uses Vue without the compiler, which means you cannot
