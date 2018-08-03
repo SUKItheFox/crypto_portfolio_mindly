@@ -4,21 +4,16 @@
 <h1>Cryptos</h1>
 <br/>
 
-<table class="">
+<table class="table table-bordered table-hover table-striped">
   <thead>
     <tr>
-      <th>Cryptocurrency(name)</th>
-      <th>Current market value</th>
-      <th>Rank</th>
-      <th>1 HR Change</th>
-      <th>24 HR Change</th>
-      <th>7 Day Change</th>
-      <th>My portfolio value</th>
-      <th>Current Value</th>
-      <th>Profit/Loss</th>
-      
-      <th>Amount owned</th>
+      <th>Cryptocurrency</th>
+      <th>Amount</th>
+      <th>Date of purchase</th>
+      <th>Wallet location</th>
+      <th>Current market value(EUR)</th>
       <th >Option</th>
+          
     </tr>
   </thead>
 
@@ -31,22 +26,15 @@
         <tr>
           <% for x in @lookup_crypto %>          
             <% if crypto.symbol == x["symbol"] %>
-              <td><%= link_to x["name"], crypto %> </td><br/>  
-              <td><%= x["price_usd"]%></td>   
-              <td><%= x["rank"]%></td>
-              <td><%= x["percent_change_1h"] %></td>
-              <td><%= x["percent_change_24h"] %></td>
-              <td><%= x["percent_change_7d"] %></td>
-              <td><%= x["price_usd"].to_d * crypto.amount_owned%></td>   
-              
+              <td><%= link_to x["name"], crypto %> </td><br/> 
+              <td><%= crypto.amount_owned %></td>
+              <td><%= crypto.created_at.strftime("%d.%m.%Y") %></td>
+              <td><%= crypto.location %></td>
+              <td><%= x["price_usd"]%></td>              
               
             <% end%>
           <% end %>     
 
-        
-          
-          
-          <td><%= crypto.amount_owned %></td>
           <td><%= link_to 'Delete', crypto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
@@ -57,4 +45,5 @@
 <br/>
 <br/>
 
-<%= link_to 'New Crypto', new_crypto_path %>
+
+

@@ -15,5 +15,15 @@
   <%= @crypto.amount_owned %>
 </p>
 
+<p>
+  <strong>Date of purchase:</strong>
+  <%= @crypto.created_at.strftime("%d.%m.%Y") %>
+</p>
+
+<p>
+  <strong>Wallet location:</strong>
+  <%= @crypto.location %>
+</p>
+
 <%= link_to 'Edit', edit_crypto_path(@crypto) %> |
 <%= link_to 'Back', cryptos_path %>

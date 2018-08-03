@@ -4,7 +4,9 @@ class CreateCryptos < ActiveRecord::Migration[5.1]
       t.string :symbol
       t.integer :user_id
       t.decimal :amount_owned
-
+      t.datetime :date
+      t.string :location
+      
       t.timestamps
     end
     add_index :cryptos, :user_id

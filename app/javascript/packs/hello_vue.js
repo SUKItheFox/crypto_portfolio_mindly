@@ -29,6 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
+new Vue({
+  el: '...',
+  data: {
+    selected: ''
+  }
+})
+
 
 
 // The above code uses Vue without the compiler, which means you cannot

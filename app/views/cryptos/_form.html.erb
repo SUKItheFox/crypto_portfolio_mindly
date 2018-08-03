@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :symbol %>
-    <%= form.text_field :symbol, id: :crypto_symbol %>
+    <%= form.text_field :symbol, id: :crypto_symbol %>    
   </div>
 
   <div class="field">
@@ -25,6 +25,17 @@
     <%= form.label :amount_owned %>
     <%= form.text_field :amount_owned, id: :crypto_amount_owned %>
   </div>
+
+  <div class="field">
+    <%= form.label "Wallet location" %>
+    <%= form.text_field :location, id: :crypto_location %>
+  </div>
+
+   <div class="field">
+    <%= form.label "Date of purchase" %>
+    <%= form.date_field :date, id: :crypto_date %>
+  </div>
+  
 
   <div class="actions">
     <%= form.submit %>
