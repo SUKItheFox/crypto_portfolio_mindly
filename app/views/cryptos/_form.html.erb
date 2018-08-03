@@ -1,43 +1,34 @@
 <%= form_with(model: crypto, local: true) do |form| %>
-  <% if crypto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(crypto.errors.count, "error") %> prohibited this crypto from being saved:</h2>
-
-      <ul>
-      <% crypto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
 
   <div class="field">
-    <%= form.label :symbol %>
-    <%= form.text_field :symbol, id: :crypto_symbol %>    
+    <%= form.label "Cryptocurrency" %><br>      
+    <%= form.select :symbol, [["BTC", "BTC"], ["ETH", "ETH"], ["XRP", "XRP"]] %>
   </div>
 
   <div class="field">
     
     <%= form.number_field :user_id, value: current_user.id, type: "hidden"  %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :amount_owned %>
+    <%= form.label "Amount" %><br>
     <%= form.text_field :amount_owned, id: :crypto_amount_owned %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label "Wallet location" %>
+    <%= form.label "Wallet location" %><br>
     <%= form.text_field :location, id: :crypto_location %>
   </div>
-
-   <div class="field">
-    <%= form.label "Date of purchase" %>
-    <%= form.date_field :date, id: :crypto_date %>
+  <br>
+  <div class="field">
+    <%= form.label "Date of purchase" %><br>
+    <%= form.date_field :date, id: :crypto_date, value: Date.current.strftime('%Y-%d-%m') %>
   </div>
-  
+  <br>
 
   <div class="actions">
-    <%= form.submit %>
+    
+    <%= form.submit "Save"%>
   </div>
 <% end %>

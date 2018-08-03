@@ -80,7 +80,7 @@ class CryptosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crypto_params
-      params.require(:crypto).permit(:symbol, :location, :date, :user_id, :amount_owned)
+      params.require(:crypto).permit(:symbol, :location, :date_created, :date_updated, :date, :user_id, :amount_owned)
     end
 
     def correct_user
@@ -88,3 +88,4 @@ class CryptosController < ApplicationController
       redirect_to cryptos_path, notice: "Not authorized to edit this entry" if @correct.nil?
     end  
 end
+ 
