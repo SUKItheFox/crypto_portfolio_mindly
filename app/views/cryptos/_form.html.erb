@@ -1,33 +1,35 @@
+
+
 <%= form_with(model: crypto, local: true) do |form| %>
   
 
-  <div class="field">
+  <div class="field text-center">
     <%= form.label "Cryptocurrency" %><br>      
-    <%= form.select :symbol, [["BTC", "BTC"], ["ETH", "ETH"], ["XRP", "XRP"]] %>
+    <%= form.select :symbol, [["Bitcoin", "BTCEUR"], ["Ethereum", "ETHEUR"], ["Ripple", "XRPEUR"]] %>
   </div>
 
-  <div class="field">
+  <div class="field text-center">
     
     <%= form.number_field :user_id, value: current_user.id, type: "hidden"  %>
   </div>
   <br>
-  <div class="field">
+  <div class="field text-center">
     <%= form.label "Amount" %><br>
     <%= form.text_field :amount_owned, id: :crypto_amount_owned %>
   </div>
   <br>
-  <div class="field">
+  <div class="field text-center">
     <%= form.label "Wallet location" %><br>
     <%= form.text_field :location, id: :crypto_location %>
   </div>
   <br>
-  <div class="field">
+  <div class="field text-center">
     <%= form.label "Date of purchase" %><br>
     <%= form.date_field :date, id: :crypto_date, value: Date.current.strftime('%Y-%d-%m') %>
   </div>
   <br>
 
-  <div class="actions">
+  <div class="actions text-center">
     
     <%= form.submit "Save"%>
   </div>

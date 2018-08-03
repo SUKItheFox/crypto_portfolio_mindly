@@ -4,10 +4,10 @@ class HomeController < ApplicationController
   	require 'net/http'
   	require 'json'
 
-  	@url = 'https://api.coinmarketcap.com/v1/ticker/'
+  	@url = 'https://api.bitfinex.com/v1/tickers/'
   	@uri = URI(@url)
   	@response = Net::HTTP.get(@uri)
   	@coins = JSON.parse(@response)
-  	@my_coins = ["BTC", "XRP", "ETH",]
+  	@my_coins = ["BTCEUR", "XRPEUR", "ETHEUR",]
   end
 end

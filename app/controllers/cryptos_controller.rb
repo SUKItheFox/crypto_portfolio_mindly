@@ -6,12 +6,13 @@ class CryptosController < ApplicationController
   # GET /cryptos.json
   def index
     @cryptos = Crypto.all
+    @crypto = Crypto.new
 
     
     require 'net/http'
     require 'json'
 
-    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    @url = 'https://api.bitfinex.com/v1/tickers/'
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
     @lookup_crypto = JSON.parse(@response)

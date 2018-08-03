@@ -1,9 +1,16 @@
+<h1 class="text-center">Crypto Portfolio Management</h1><br/>
+
+<h5 class="text-center">Add New Portfolio Item</h5>
 
 
-<h1>Crypto Portfolio Management</h1>
+
+<%= render 'form', crypto: @crypto %>
+
 <br/>
 
-<table class="table table-bordered table-hover table-striped">
+<br/>
+
+<table class="table table-bordered table-hover table-striped text-center">
   <thead>
     <tr>
       <th>Cryptocurrency</th>
@@ -24,12 +31,12 @@
         <% end %>
         <tr>
           <% for x in @lookup_crypto %>          
-            <% if crypto.symbol == x["symbol"] %>
-              <td><%= link_to x["name"], crypto %> </td><br/> 
+            <% if crypto.symbol == x["pair"] %>
+              <td><%= link_to x["pair"], crypto %> </td><br/> 
               <td><%= crypto.amount_owned %></td>
-              <td><%= crypto.created_at.strftime("%d.%m.%Y") %></td>
+              <td><%= crypto.date.strftime("%d.%m.%Y") %></td>
               <td><%= crypto.location %></td>
-              <td><%= x["price_usd"]%></td>              
+              <td><%= x["last_price"].to_d * crypto.amount_owned %></td>              
               
             <% end%>
           <% end %>     
