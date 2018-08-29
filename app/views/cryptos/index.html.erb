@@ -33,15 +33,15 @@
           <% for x in @lookup_crypto %>          
             <% if crypto.symbol == x["pair"] %>
               <td><%= link_to x["pair"], crypto %> </td><br/> 
-              <td><%= crypto.amount_owned %></td>
+              <td><%= crypto.amount_owned.round %></td>
               <td><%= crypto.date.strftime("%d.%m.%Y") %></td>
               <td><%= crypto.location %></td>
-              <td><%= x["last_price"].to_d * crypto.amount_owned %></td>              
+              <td><%= (x["last_price"].to_d * crypto.amount_owned).round %></td>              
               
             <% end%>
           <% end %>     
 
-          <td><%= link_to 'Delete', crypto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', crypto, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %></td>
         </tr>
       <% end %>
     <% end %>  

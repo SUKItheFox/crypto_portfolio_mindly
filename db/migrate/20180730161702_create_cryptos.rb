@@ -4,7 +4,7 @@ class CreateCryptos < ActiveRecord::Migration[5.1]
       t.string :symbol
       t.integer :user_id
       t.decimal :amount_owned
-      t.datetime :date
+      t.datetime :date, default: -> { 'CURRENT_TIMESTAMP' }
       t.string :location
       
       t.timestamps

@@ -5,7 +5,7 @@
 
   <div class="field text-center">
     <%= form.label "Cryptocurrency" %><br>      
-    <%= form.select :symbol, [["Bitcoin", "BTCEUR"], ["Ethereum", "ETHEUR"], ["Ripple", "XRPEUR"]] %>
+    <%= form.select :symbol, [["Bitcoin", "BTCEUR"], ["Ethereum", "ETHEUR"], ["Ripple", "XRPUSD"]] %>
   </div>
 
   <div class="field text-center">
@@ -15,17 +15,17 @@
   <br>
   <div class="field text-center">
     <%= form.label "Amount" %><br>
-    <%= form.text_field :amount_owned, id: :crypto_amount_owned %>
+    <%= form.text_field :amount_owned, id: :crypto_amount_owned, :required => true %>
   </div>
   <br>
   <div class="field text-center">
     <%= form.label "Wallet location" %><br>
-    <%= form.text_field :location, id: :crypto_location %>
+    <%= form.text_field :location, id: :crypto_location, :required => true %>
   </div>
   <br>
   <div class="field text-center">
     <%= form.label "Date of purchase" %><br>
-    <%= form.date_field :date, id: :crypto_date, value: Date.current.strftime('%Y-%d-%m') %>
+    <%= form.text_field :date, id: :crypto_date, value: Date.current.strftime('%d.%m.%Y') %>
   </div>
   <br>
 

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Amount owned:</strong>
-  <%= @crypto.amount_owned %>
+  <%= @crypto.amount_owned.round %>
 </p>
 
 <p>
@@ -25,5 +25,5 @@
   <%= @crypto.location %>
 </p>
 
-<%= link_to 'Edit', edit_crypto_path(@crypto) %> |
-<%= link_to 'Back', cryptos_path %>
+<%= link_to 'Edit', edit_crypto_path(@crypto), :class => "btn btn-default" %> |
+<%= link_to 'Back', cryptos_path, :class => "btn btn-default" %>
