@@ -32,11 +32,24 @@
         <tr>
           <% for x in @lookup_crypto %>          
             <% if crypto.symbol == x["pair"] %>
-              <td><%= link_to x["pair"], crypto %> </td><br/> 
+              <td>
+                <% if crypto.symbol == "XRPUSD" %>
+                  <%= link_to "XRPEUR", crypto %>
+                <% else %>
+                  <%= link_to x["pair"], crypto %>
+                <% end %>
+
+              </td><br/> 
               <td><%= crypto.amount_owned.round %></td>
               <td><%= crypto.date.strftime("%d.%m.%Y") %></td>
               <td><%= crypto.location %></td>
-              <td><%= (x["last_price"].to_d * crypto.amount_owned).round %></td>              
+              <td>
+                <% if crypto.symbol == "XRPUSD" %>
+                  <%= ((x["last_price"].to_d * crypto.amount_owned) * 0.860264).round  %>
+                <% else %>
+                  <%= (x["last_price"].to_d * crypto.amount_owned).round %>
+                <% end %>
+              </td>              
               
             <% end%>
           <% end %>     

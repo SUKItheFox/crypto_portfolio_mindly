@@ -2,7 +2,12 @@
 
 <p>
   <strong>Symbol:</strong>
-  <%= @crypto.symbol %>
+  <% if @crypto.symbol == "XRPUSD" %>
+    <%= "XRPEUR" %>
+  <% else %>
+    <%= @crypto.symbol %>
+  <% end %>
+  
 </p>
 
 <p>
