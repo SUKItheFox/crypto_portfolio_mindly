@@ -1,16 +1,33 @@
-<ul class="navbar navbar-light bg-light">
-          <li><%= link_to "Home", root_path %></li>
-
-        <% if user_signed_in? %>  
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-          <li><%= link_to "Add New", new_crypto_path %></li> 
-         
-        <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li><%= link_to "Log In", new_user_session_path %></li>
-        <% end %>  
-
-</ul>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" style= "font-size: 2rem;" href="#">Mindly CRYPTO Portfolio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "Home", root_path %></li>
+        	<% if user_signed_in? %>    	
+	            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+	            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+	            <li><%= link_to "Add New", new_crypto_path %></li> 
+	        
+       		<% else %>
+		        <li class="nav navbar-nav navbar-right">
+			      <a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Register</a>
+			      <a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
+			    </li> 
+			<% end -%>     
+	    </ul>
+	    
+        
+      
+    </div>
+  </div>
+</nav>
 
 

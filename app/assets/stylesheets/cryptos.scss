@@ -1,3 +1,27 @@
 // Place all the styles related to the cryptos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #fff; 
+    border-color: #007bff; 
+}
+
+.btn-primary a{
+    color: #fff;
+    background-color: #fff; 
+    border-color: #007bff; 
+}
+
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #fff;
+    border-color: #005cbf;
+}        
+
+.crypto-body {
+	background-color: #2E151b;
+}
