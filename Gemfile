@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'rake', '12.3.2'
 
 #Add webpacker 
 gem 'webpacker', '~> 3.5'
