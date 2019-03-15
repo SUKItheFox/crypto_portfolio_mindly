@@ -3,12 +3,12 @@
   <head>
     <title>Crypto Portfolio Mindly</title>
     <%= csrf_meta_tags %>
-  	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -25,13 +25,17 @@
   <body class="crypto-body">
     <div class="container" data-behavior = "vue" >
 
-    
+    	<%= render 'layouts/navbar' %>
 
     	<%= render 'layouts/flash' %>
 
       <%= yield %>
       
     </div>  
-    
+    <footer>
+        <p class="text-center text-white" style="padding-top: 1em;"> &copy; 2018 Crafted by <a href="https://github.com/SUKItheFox"><img src="SUKItheFox9.png" width="25"></img> </a>
+          <br />
+          </p>
+    </footer>
   </body>
 </html>
